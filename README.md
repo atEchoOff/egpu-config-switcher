@@ -16,6 +16,18 @@ A premium, lightweight Windows system tray utility built with **C# .NET 8 (WPF &
 
 ---
 
+## User Instructions
+
+Follow these steps to manage and swap settings for your graphics configurations:
+
+1. **Add Game Configuration**: Click the **Add Config File** button in the main window and select the game's active configuration file. The switcher will automatically initialize profile files for both GPU modes (`.eGPU` and `.iGPU`).
+2. **Modify Settings In-Game**: Whenever you want to change settings for your current GPU:
+   - Click the **Unfreeze** button next to the file to temporarily release the read-only lock.
+   - Open your game and configure your settings in-game as desired.
+3. **Save and Lock Profiles**: Once you've made your changes in-game, click the **Freeze** button. This saves your modifications to the corresponding active GPU profile and re-locks the configuration to prevent the game from overwriting it.
+
+---
+
 ## Local Development & Running
 
 To run or compile the switcher locally:
