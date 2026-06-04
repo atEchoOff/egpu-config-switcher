@@ -46,21 +46,6 @@ namespace eGPUConfigSwitcher
             // 0. Check for CLI arguments
             foreach (string arg in args)
             {
-                if (string.Equals(arg, "--generate-ico", StringComparison.OrdinalIgnoreCase))
-                {
-                    try
-                    {
-                        string currentDirIco = Path.Combine(Environment.CurrentDirectory, "icon.ico");
-                        if (File.Exists(currentDirIco)) File.Delete(currentDirIco);
-                        IconManager.GenerateIcoFile(currentDirIco);
-                        Console.WriteLine($"Generated ico file successfully at: {currentDirIco}");
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine($"Failed to generate ico file: {ex.Message}");
-                    }
-                    return;
-                }
                 if (string.Equals(arg, "--test", StringComparison.OrdinalIgnoreCase))
                 {
                     RunDiagnosticsTests();
@@ -76,22 +61,6 @@ namespace eGPUConfigSwitcher
             catch (Exception ex)
             {
                 Debug.WriteLine("Failed to set AppUserModelID: " + ex.Message);
-            }
-
-            // 2. Setup AppData directory and create custom taskbar icon files
-            string appDataDir = ConfigManager.GetAppDataDir();
-            string iconPngPath = IconManager.CreateAppIcon(appDataDir);
-            
-            // Generate/update the multi-resolution icon.ico in AppData on startup
-            try
-            {
-                string appDataIcoPath = Path.Combine(appDataDir, "icon.ico");
-                if (File.Exists(appDataIcoPath)) File.Delete(appDataIcoPath);
-                IconManager.GenerateIcoFile(appDataIcoPath);
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine("Failed to create AppData ico file: " + ex.Message);
             }
 
             // 3. Register Startup Shortcut (defaults to enabled on Windows log-on)

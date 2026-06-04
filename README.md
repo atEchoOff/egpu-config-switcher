@@ -33,11 +33,6 @@ To run or compile the switcher locally:
    ```powershell
    dotnet run -- --test
    ```
-4. **Generate App Icon**:
-   To compile all 15 Windows DPI resolution scaling sizes into the embedded `icon.ico` resource:
-   ```powershell
-   dotnet run -- --generate-ico
-   ```
 
 ---
 
@@ -45,7 +40,6 @@ To run or compile the switcher locally:
 
 * **Settings File**: `%APPDATA%\eGPUConfigSwitcher\settings.json` (Stores list of tracked files and their freeze states).
 * **Diagnostics Log**: `%APPDATA%\eGPUConfigSwitcher\debug.log` (Tracks locking/swapping events).
-* **Dynamic Icons**: `%APPDATA%\eGPUConfigSwitcher\icon.ico` and `icon_gpu.png` (DPI-scaled visual assets).
 
 ---
 

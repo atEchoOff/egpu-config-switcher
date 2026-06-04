@@ -23,3 +23,5 @@ C:\Users\Brian\Documents\dev\egpu-config-switcher\bin\Debug\net8.0-windows\Syste
 C:\Users\Brian\Documents\dev\egpu-config-switcher\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Management.dll
 C:\Users\Brian\Documents\dev\egpu-config-switcher\obj\Debug\net8.0-windows\eGPUConfigSwitcher.csproj.AssemblyReference.cache
 C:\Users\Brian\Documents\dev\egpu-config-switcher\obj\Debug\net8.0-windows\eGPUConf.4701BAAD.Up2Date
+c:\Users\Brian\Documents\dev\egpu-config-switcher\bin\Debug\net8.0-windows\icon.ico
+c:\Users\Brian\Documents\dev\egpu-config-switcher\obj\Debug\net8.0-windows\eGPUConfigSwitcher.sourcelink.json

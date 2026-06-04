@@ -40,11 +40,10 @@ namespace eGPUConfigSwitcher
             ActiveGpuType = GpuDetector.DetectGpuType();
             UpdateGpuBadge();
 
-            // Set Window Icon dynamically from the multi-resolution AppData icon.ico to support High-DPI scaling
+            // Set Window Icon dynamically from the multi-resolution icon.ico to support High-DPI scaling
             try
             {
-                string appDataDir = ConfigManager.GetAppDataDir();
-                string icoPath = Path.Combine(appDataDir, "icon.ico");
+                string icoPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "icon.ico");
                 if (File.Exists(icoPath))
                 {
                     this.Icon = System.Windows.Media.Imaging.BitmapFrame.Create(

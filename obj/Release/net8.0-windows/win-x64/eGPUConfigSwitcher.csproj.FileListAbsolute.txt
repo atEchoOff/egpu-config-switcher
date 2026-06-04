@@ -22,3 +22,5 @@ C:\Users\Brian\Documents\dev\egpu-config-switcher\obj\Release\net8.0-windows\win
 C:\Users\Brian\Documents\dev\egpu-config-switcher\obj\Release\net8.0-windows\win-x64\eGPUConfigSwitcher.pdb
 C:\Users\Brian\Documents\dev\egpu-config-switcher\obj\Release\net8.0-windows\win-x64\eGPUConfigSwitcher.genruntimeconfig.cache
 C:\Users\Brian\Documents\dev\egpu-config-switcher\obj\Release\net8.0-windows\win-x64\ref\eGPUConfigSwitcher.dll
+C:\Users\Brian\Documents\dev\egpu-config-switcher\bin\Release\net8.0-windows\win-x64\icon.ico
+C:\Users\Brian\Documents\dev\egpu-config-switcher\obj\Release\net8.0-windows\win-x64\eGPUConfigSwitcher.sourcelink.json

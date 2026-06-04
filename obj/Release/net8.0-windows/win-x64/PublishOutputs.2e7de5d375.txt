@@ -1,4 +1,5 @@
 C:\Users\Brian\Documents\dev\egpu-config-switcher\bin\Release\net8.0-windows\publish\eGPUConfigSwitcher.exe
+C:\Users\Brian\Documents\dev\egpu-config-switcher\bin\Release\net8.0-windows\publish\icon.ico
 C:\Users\Brian\Documents\dev\egpu-config-switcher\bin\Release\net8.0-windows\publish\eGPUConfigSwitcher.dll
 C:\Users\Brian\Documents\dev\egpu-config-switcher\bin\Release\net8.0-windows\publish\eGPUConfigSwitcher.deps.json
 C:\Users\Brian\Documents\dev\egpu-config-switcher\bin\Release\net8.0-windows\publish\eGPUConfigSwitcher.runtimeconfig.json
