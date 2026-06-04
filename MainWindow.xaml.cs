@@ -190,7 +190,7 @@ namespace eGPUConfigSwitcher
 
                 var newConfig = new ConfigFile { Path = selectedPath, IsFrozen = true };
 
-                // Case 1: First time added config is copied to both .eGPU and .iGPU locations
+                // Initialize base profiles by copying the config to both .eGPU and .iGPU locations
                 try
                 {
                     File.Copy(selectedPath, selectedPath + ".eGPU", true);
@@ -237,7 +237,7 @@ namespace eGPUConfigSwitcher
                 cfg.IsFrozen = true;
                 ConfigManager.SaveSettings(_settings);
 
-                // Case 2: Save the user's custom changes to current GPU-specific location upon re-freezing after unfrozen
+                // Save the custom changes to current GPU-specific location upon re-freezing after the config was unfrozen
                 string gpuSpecificPath = cfg.Path + "." + ActiveGpuType.ToString();
                 try
                 {

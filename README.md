@@ -11,11 +11,11 @@ A premium, lightweight Windows system tray utility built with **C# .NET 8 (WPF &
   - **iGPU Mode (Red)**: Running on integrated graphics.
 * **Smart Profile Swapping**:
   - **Startup Swap**: Replaces game config files with their GPU-specific profile (`.eGPU` or `.iGPU`) depending on the detected hardware mode before locking.
-  - **Add File (Case 1)**: Newly added configurations automatically write base profiles to both `.eGPU` and `.iGPU` locations.
-  - **Freeze after Unfrozen (Case 2)**: Re-locking a previously unfrozen card captures the edits and updates the active GPU profile.
+  - **Profile Initialization**: Newly added configurations automatically write base profiles to both `.eGPU` and `.iGPU` locations.
+  - **Profile Capture**: Re-locking a previously unfrozen configuration captures edits and updates the active GPU profile.
 * **Passive File Locks**: Uses C# file sharing streams to make configurations read-only to external applications while maintaining read compatibility for games. Consumes exactly 0% CPU and under 1 KB of RAM per lock.
 * **Sleek Dark UI**: Modern dark-themed, borderless window with drop shadows, gradient buttons, hover-reactive visual indicators, and a custom vector-drawn GPU tray icon.
-* **User-Level Setup**: Seamless installation to Local AppData avoiding administrative UAC elevation requirements.
+* **User-Level Setup**: Seamless installation to Local AppData avoiding administrative UAC prompts.
 
 ---
 
@@ -29,7 +29,7 @@ To run or compile the switcher locally:
    dotnet run
    ```
 3. **Run Diagnostic Tests**:
-   To run the automated diagnostic verification suite (which validates Cases 1, 2, and startup swapping rules in a temporary folder):
+   To run the automated diagnostic verification suite (which validates config initialization, capture, and startup swapping rules in a temporary folder):
    ```powershell
    dotnet run -- --test
    ```

@@ -167,7 +167,7 @@ namespace eGPUConfigSwitcher
         }
 
         /// <summary>
-        /// Runs automated diagnostics checks simulating Case 1/2 copy operations and startup swapping rules.
+        /// Runs automated diagnostics checks simulating config file profile copying and startup swapping rules.
         /// </summary>
         private static void RunDiagnosticsTests()
         {
@@ -184,26 +184,26 @@ namespace eGPUConfigSwitcher
             File.WriteAllText(mainConfigPath, "Version 1.0\nGPUSetting=Default");
             Console.WriteLine($"[TEST] Created main config file at: {mainConfigPath}");
 
-            // --- CASE 1: Adding config file for the first time ---
-            Console.WriteLine("[TEST] Simulating Case 1 (Add Config)...");
+            // --- Step 1: Adding config file for the first time ---
+            Console.WriteLine("[TEST] Simulating profile creation on add...");
             try
             {
                 File.Copy(mainConfigPath, mainConfigPath + ".eGPU", true);
                 File.Copy(mainConfigPath, mainConfigPath + ".iGPU", true);
-                Console.WriteLine("[TEST] Case 1: Copied to both .eGPU and .iGPU locations");
+                Console.WriteLine("[TEST] Profiles copied to both .eGPU and .iGPU locations");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"[TEST] Case 1 Failed: {ex.Message}");
+                Console.WriteLine($"[TEST] Step 1 Failed: {ex.Message}");
             }
 
-            bool case1Success = File.Exists(mainConfigPath + ".eGPU") && 
+            bool step1Success = File.Exists(mainConfigPath + ".eGPU") && 
                                 File.Exists(mainConfigPath + ".iGPU") &&
                                 File.ReadAllText(mainConfigPath + ".eGPU") == "Version 1.0\nGPUSetting=Default";
-            Console.WriteLine($"[TEST] Case 1 Verification: {(case1Success ? "PASSED" : "FAILED")}");
+            Console.WriteLine($"[TEST] Step 1 Verification: {(step1Success ? "PASSED" : "FAILED")}");
 
-            // --- CASE 2: Freezing after unfrozen ---
-            Console.WriteLine("[TEST] Simulating Case 2 (Freeze after Unfrozen)...");
+            // --- Step 2: Freezing after unfrozen ---
+            Console.WriteLine("[TEST] Simulating profile saving on freeze...");
             File.WriteAllText(mainConfigPath, "Version 1.0\nGPUSetting=UserEdited");
             Console.WriteLine("[TEST] Main config file modified while unfrozen.");
 
@@ -211,19 +211,19 @@ namespace eGPUConfigSwitcher
             try
             {
                 File.Copy(mainConfigPath, activeGpuPath, true);
-                Console.WriteLine($"[TEST] Case 2: Copied current config to active GPU path: {activeGpuPath}");
+                Console.WriteLine($"[TEST] Copied current config to active GPU path: {activeGpuPath}");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"[TEST] Case 2 Failed: {ex.Message}");
+                Console.WriteLine($"[TEST] Step 2 Failed: {ex.Message}");
             }
 
-            bool case2Success = File.ReadAllText(activeGpuPath) == "Version 1.0\nGPUSetting=UserEdited";
+            bool step2Success = File.ReadAllText(activeGpuPath) == "Version 1.0\nGPUSetting=UserEdited";
             string inactiveGpu = gpuType == GpuType.iGPU ? "eGPU" : "iGPU";
             string inactiveGpuPath = mainConfigPath + "." + inactiveGpu;
-            bool case2InactiveVerify = File.ReadAllText(inactiveGpuPath) == "Version 1.0\nGPUSetting=Default";
-            Console.WriteLine($"[TEST] Case 2 Active Verification: {(case2Success ? "PASSED" : "FAILED")}");
-            Console.WriteLine($"[TEST] Case 2 Inactive Verification: {(case2InactiveVerify ? "PASSED" : "FAILED")}");
+            bool step2InactiveVerify = File.ReadAllText(inactiveGpuPath) == "Version 1.0\nGPUSetting=Default";
+            Console.WriteLine($"[TEST] Active Profile Verification: {(step2Success ? "PASSED" : "FAILED")}");
+            Console.WriteLine($"[TEST] Inactive Profile Verification: {(step2InactiveVerify ? "PASSED" : "FAILED")}");
 
             // --- STARTUP SWAP: Simulating startup swap ---
             Console.WriteLine("[TEST] Simulating Startup Swap...");
@@ -245,7 +245,7 @@ namespace eGPUConfigSwitcher
             }
             catch { }
 
-            if (case1Success && case2Success && case2InactiveVerify && startupSwapSuccess)
+            if (step1Success && step2Success && step2InactiveVerify && startupSwapSuccess)
             {
                 Console.WriteLine("=== Test Suite Result: ALL PASSED ===");
             }
