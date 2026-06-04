@@ -6,15 +6,12 @@ A premium, lightweight Windows system tray utility built with **C# .NET 8 (WPF &
 
 ## Key Features
 
-* **Active GPU Detection**: Queries active display devices at startup via WMI. Displays a high-visibility badge next to the title:
+* **eGPU Auto-Detect**: Automatically detects eGPU status at system startup using active display queries. Displays a high-visibility status badge:
   - **eGPU Mode (Green)**: Connected to external graphics.
   - **iGPU Mode (Red)**: Running on integrated graphics.
-* **Smart Profile Swapping**:
-  - **Startup Swap**: Replaces game config files with their GPU-specific profile (`.eGPU` or `.iGPU`) depending on the detected hardware mode before locking.
-  - **Profile Initialization**: Newly added configurations automatically write base profiles to both `.eGPU` and `.iGPU` locations.
-  - **Profile Capture**: Re-locking a previously unfrozen configuration captures edits and updates the active GPU profile.
-* **Passive File Locks**: Uses C# file sharing streams to make configurations read-only to external applications while maintaining read compatibility for games. Consumes exactly 0% CPU and under 1 KB of RAM per lock.
-* **Sleek Dark UI**: Modern dark-themed, borderless window with drop shadows, gradient buttons, hover-reactive visual indicators, and a custom vector-drawn GPU tray icon.
+* **File Switching**: Automatically switches game configuration files to their corresponding GPU-specific profiles (`.eGPU` or `.iGPU`) based on the detected eGPU or iGPU status.
+* **File Locking**: Locks configurations using passive file sharing streams to avoid games overwriting custom game settings while maintaining full read compatibility.
+* **Sleek Dark UI**: Modern dark-themed, borderless window with drop shadows, gradient buttons, hover-reactive visual indicators, and a custom GPU tray icon.
 * **User-Level Setup**: Seamless installation to Local AppData avoiding administrative UAC prompts.
 
 ---
