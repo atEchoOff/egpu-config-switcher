@@ -4,7 +4,7 @@ A premium, lightweight Windows system tray utility built with **C# .NET 8 (WPF &
 
 ---
 
-## Features
+## Key Features
 
 * **Active GPU Detection**: Queries active display devices at startup via WMI. Displays a high-visibility badge next to the title:
   - **eGPU Mode (Green)**: Connected to external graphics.
@@ -16,6 +16,36 @@ A premium, lightweight Windows system tray utility built with **C# .NET 8 (WPF &
 * **Passive File Locks**: Uses C# file sharing streams to make configurations read-only to external applications while maintaining read compatibility for games. Consumes exactly 0% CPU and under 1 KB of RAM per lock.
 * **Sleek Dark UI**: Modern dark-themed, borderless window with drop shadows, gradient buttons, hover-reactive visual indicators, and a custom vector-drawn GPU tray icon.
 * **User-Level Setup**: Seamless installation to Local AppData avoiding administrative UAC prompts.
+
+---
+
+## Local Development & Running
+
+To run or compile the switcher locally:
+
+1. **Requirements**: Make sure you have the **.NET 8.0 SDK** installed.
+2. **Run in Debug mode**:
+   ```powershell
+   dotnet run
+   ```
+3. **Run Diagnostic Tests**:
+   To run the automated diagnostic verification suite (which validates Cases 1, 2, and startup swapping rules in a temporary folder):
+   ```powershell
+   dotnet run -- --test
+   ```
+4. **Generate App Icon**:
+   To compile all 15 Windows DPI resolution scaling sizes into the embedded `icon.ico` resource:
+   ```powershell
+   dotnet run -- --generate-ico
+   ```
+
+---
+
+## Directory & File Locations
+
+* **Settings File**: `%APPDATA%\eGPUConfigSwitcher\settings.json` (Stores list of tracked files and their freeze states).
+* **Diagnostics Log**: `%APPDATA%\eGPUConfigSwitcher\debug.log` (Tracks locking/swapping events).
+* **Dynamic Icons**: `%APPDATA%\eGPUConfigSwitcher\icon.ico` and `icon_gpu.png` (DPI-scaled visual assets).
 
 ---
 
@@ -37,9 +67,10 @@ Output\eGPUConfigSwitcherSetup.exe
 
 ---
 
-## Installation
+## Usage & Operations
 
-1. Run the generated `eGPUConfigSwitcherSetup.exe` installer.
-2. Select whether to create a Desktop shortcut.
-3. Once completed, the switcher will run automatically.
-4. The utility registers itself in your Windows Startup directory (`shell:startup`) with a `--silent` flag to run hidden directly in the tray on boot.
+1. **System Tray**:
+   - **Left-Click**: Toggles the main user interface window (Show/Hide).
+   - **Right-Click**: Opens a context menu with **Close** to terminate the switcher process completely and release all locks.
+2. **Closing the Window**: Clicking the "✕" button in the title bar minimizes the application back to the tray, keeping the background file locks active.
+3. **Windows Startup**: The switcher automatically places a shortcut pointing to itself inside the Windows Startup folder (`shell:startup`) with a `--silent` flag to run minimized directly in the tray on system boot.
