@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "WpYRqGA6A8o=",
+  "success": true,
+  "projectFilePath": "c:\\Users\\Brian\\Documents\\dev\\egpu-config-switcher\\eGPUConfigSwitcher.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Brian\\.nuget\\packages\\system.codedom\\10.0.8\\system.codedom.10.0.8.nupkg.sha512",
+    "C:\\Users\\Brian\\.nuget\\packages\\system.management\\10.0.8\\system.management.10.0.8.nupkg.sha512"
+  ],
+  "logs": []
+}

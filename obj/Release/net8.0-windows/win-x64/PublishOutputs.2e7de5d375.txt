@@ -1,0 +1,7 @@
+C:\Users\Brian\Documents\dev\egpu-config-switcher\bin\Release\net8.0-windows\publish\eGPUConfigSwitcher.exe
+C:\Users\Brian\Documents\dev\egpu-config-switcher\bin\Release\net8.0-windows\publish\eGPUConfigSwitcher.dll
+C:\Users\Brian\Documents\dev\egpu-config-switcher\bin\Release\net8.0-windows\publish\eGPUConfigSwitcher.deps.json
+C:\Users\Brian\Documents\dev\egpu-config-switcher\bin\Release\net8.0-windows\publish\eGPUConfigSwitcher.runtimeconfig.json
+C:\Users\Brian\Documents\dev\egpu-config-switcher\bin\Release\net8.0-windows\publish\eGPUConfigSwitcher.pdb
+C:\Users\Brian\Documents\dev\egpu-config-switcher\bin\Release\net8.0-windows\publish\System.CodeDom.dll
+C:\Users\Brian\Documents\dev\egpu-config-switcher\bin\Release\net8.0-windows\publish\System.Management.dll
