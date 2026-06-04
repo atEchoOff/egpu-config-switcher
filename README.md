@@ -15,7 +15,7 @@ A premium, lightweight Windows system tray utility built with **C# .NET 8 (WPF &
   - **Freeze after Unfrozen (Case 2)**: Re-locking a previously unfrozen card captures the edits and updates the active GPU profile.
 * **Passive File Locks**: Uses C# file sharing streams to make configurations read-only to external applications while maintaining read compatibility for games. Consumes exactly 0% CPU and under 1 KB of RAM per lock.
 * **Sleek Dark UI**: Modern dark-themed, borderless window with drop shadows, gradient buttons, hover-reactive visual indicators, and a custom vector-drawn GPU tray icon.
-* **User-Level Setup**: Seamless installation to Local AppData avoiding administrative UAC prompts.
+* **User-Level Setup**: Seamless installation to Local AppData avoiding administrative UAC elevation requirements.
 
 ---
 
